@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>Create An Account: </h1>
+    <form method="POST">
+      {% csrf_token %}
+      {% comment %} {% bootstrap_form form %} {% endcomment %}
+      <input type="text" name="username" maxlength="150" autofocus="" class="form-control" placeholder="Username" title="" required="" id="id_username">
+      <input type="email" name="email" maxlength="254" class="form-control" placeholder="Email Address" title="" id="id_email">
+      <input type="password" name="password1" class="form-control" placeholder="Password" title="" required="" id="id_password1" aria-autocomplete="list">
+      <input type="password" name="password2" class="form-control" placeholder="Password confirmation" title="" required="" id="id_password2">
+      <input type="submit" id="login" class="btn btn-default" value="SignUp">
+    </form>
+
+  </div>
+
+{% endblock %}
